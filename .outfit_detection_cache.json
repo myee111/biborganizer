@@ -1,227 +1,362 @@
 {
   "/Users/myee/Downloads/Photos-3-001/_DSC3623_DxO.jpg": [
     {
-      "position": "center of image, skiing downhill",
-      "outfit_description": "Young skier wearing a SMITH branded white/silver helmet with dark accents. Racing on HEAD branded skis with white and blue graphics. Wearing a navy blue and light blue striped racing suit with horizontal stripes on the lower portion. Orange/red gloves with black accents. Using pink/magenta colored ski poles with yellow/fluorescent tips. The suit features a navy blue upper portion with light blue stripes on the lower half and legs. A logo patch visible on the upper arm area.",
+      "position": "center of image, mid-slope",
+      "outfit_description": "Young skier wearing a SMITH white/silver helmet with blue goggle lens and blue/multi-colored strap. HEAD brand skis clearly visible on both skis. Racing suit features blue and white horizontal stripes on lower portion with navy blue upper body and shoulders. Small triangular badge/logo on upper chest area. Bright pink/magenta poles. Red and black gloves. Dark colored ski boots (brand not clearly readable). Bib number not clearly visible or readable.",
       "bib_number": null,
       "equipment_brands": [
         "SMITH",
         "HEAD"
       ],
+      "helmet_brand": "SMITH",
       "helmet_colors": [
         "white",
-        "silver",
-        "black"
+        "silver"
       ],
       "helmet_patterns": [
-        "solid with brand logo"
+        "solid"
+      ],
+      "goggle_lens_color": "blue",
+      "goggle_strap_color": "blue and multicolored pattern",
+      "boot_brand": null,
+      "boot_colors": [
+        "black",
+        "dark gray"
       ],
       "patterns": [
-        "horizontal stripes on lower suit",
-        "solid navy upper"
+        "horizontal stripes on lower body",
+        "solid navy upper body"
       ],
       "primary_colors": [
         "navy blue",
-        "light blue",
+        "blue",
         "white"
       ],
       "clothing_items": [
         "racing suit",
-        "ski gloves",
+        "gloves",
         "helmet",
-        "goggles",
-        "ski boots"
+        "goggles"
+      ]
+    },
+    {
+      "position": "background right, blurred",
+      "outfit_description": "Person standing in background wearing dark colored clothing with blue tones visible. Details not clearly discernible due to distance and blur. No equipment brands or bib number readable.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "dark",
+        "blue tones"
+      ],
+      "clothing_items": [
+        "jacket or outerwear"
       ]
     }
   ],
   "/Users/myee/Downloads/Photos-3-001/_DSC3624_DxO.jpg": [
     {
-      "position": "center of image, skiing downhill",
-      "outfit_description": "Young skier wearing a SMITH helmet in white/gray with black accents. Racing on HEAD skis (visible brand text on skis). Using pink/magenta poles with yellow grips. Wearing a white and blue racing suit with horizontal navy blue stripes on the lower portion. Navy blue sleeves with red and white accents on the upper body. Black and red gloves. No bib number visible from this angle. Navy blue ski pants with horizontal stripe pattern continuing from the suit.",
+      "position": "center of image",
+      "outfit_description": "Skier wearing a SMITH helmet in silver/gray with black accents. Helmet has blue goggle strap visible. Racing bib worn over navy blue and white suit with horizontal striped pattern on lower half (blue and white stripes). Suit features red accents on shoulders. HEAD brand skis clearly visible on both skis in white with black text. Black and red gloves, holding pink/magenta poles with yellow grips. Ski boots appear to be gray/black racing boots.",
       "bib_number": null,
       "equipment_brands": [
         "SMITH",
         "HEAD"
       ],
+      "helmet_brand": "SMITH",
       "helmet_colors": [
-        "white",
+        "silver",
         "gray",
         "black"
       ],
       "helmet_patterns": [
-        "solid with black accents"
+        "solid with brand accents"
+      ],
+      "goggle_lens_color": "dark/tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "gray",
+        "black"
       ],
       "patterns": [
         "horizontal stripes",
         "color blocking"
       ],
       "primary_colors": [
-        "white",
         "navy blue",
-        "light blue"
+        "white",
+        "red"
       ],
       "clothing_items": [
         "racing suit",
+        "racing bib",
         "gloves",
-        "ski pants",
         "helmet"
       ]
     }
   ],
   "/Users/myee/Downloads/Photos-3-001/_DSC3625_DxO.jpg": [
     {
-      "position": "center of image, mid-slope",
-      "outfit_description": "Young skier wearing a SMITH branded white/silver helmet with blue accents. Skis are HEAD brand (visible 'HEAD' text on skis). Wearing a blue and white racing suit with horizontal blue stripes on the lower portion, navy blue upper body with white and red color blocking. Suit features a triangular logo patch on the chest area. Black gloves with red accents. Pink/magenta colored ski poles with yellow/green grips. Black ski boots. No bib number visible on this angle.",
+      "position": "center of image, foreground",
+      "outfit_description": "Young skier wearing a SMITH brand metallic silver/gray helmet with dark visor and yellow MIPS technology indicator visible. Goggles have dark/tinted lenses with blue strap. Racing suit features blue and white horizontal stripes across torso, with navy blue solid sections on lower body and arms. White/light colored upper chest panel. Red and white accents visible on suit. Black gloves with red and pink/fluorescent accents. HEAD brand skis clearly visible with white bases and black 'HEAD' text. Pink/fluorescent pink ski poles with yellow grips. Dark gray/black ski boots. No bib number clearly visible.",
       "bib_number": null,
       "equipment_brands": [
         "SMITH",
         "HEAD"
       ],
+      "helmet_brand": "SMITH",
       "helmet_colors": [
-        "white",
-        "silver",
-        "blue"
+        "metallic silver",
+        "gray",
+        "black"
       ],
       "helmet_patterns": [
-        "SMITH branding",
-        "blue accents",
-        "modern design"
+        "solid",
+        "MIPS yellow indicator"
+      ],
+      "goggle_lens_color": "dark tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark gray",
+        "black"
       ],
       "patterns": [
         "horizontal blue and white stripes",
-        "color blocking",
-        "team logo patch"
+        "color blocking"
       ],
       "primary_colors": [
         "blue",
         "white",
-        "navy blue",
+        "navy",
         "red"
       ],
       "clothing_items": [
         "racing suit",
-        "ski gloves",
-        "ski boots",
-        "helmet"
-      ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3630_DxO.jpg": [
-    {
-      "position": "center of image, foreground",
-      "outfit_description": "Young skier in crouched racing position wearing a white and silver helmet with SMITH branding visible. Racing on HEAD brand skis with white/light colored bases. Wearing a racing suit with distinctive blue and white striped pattern on the torso area, combined with navy/dark blue sections. The suit features red and blue color blocking elements. Using bright pink/magenta colored ski poles. Wearing dark ski boots with visible orange/red accents. The racing bib appears dark colored but no clear number is visible from this angle. White and blue gloves complete the outfit.",
-      "bib_number": null,
-      "equipment_brands": [
-        "SMITH",
-        "HEAD"
-      ],
-      "helmet_colors": [
-        "white",
-        "silver"
-      ],
-      "helmet_patterns": [
-        "solid color with brand graphics"
-      ],
-      "patterns": [
-        "horizontal stripes",
-        "color blocking",
-        "racing design"
-      ],
-      "primary_colors": [
-        "blue",
-        "white",
-        "navy"
-      ],
-      "clothing_items": [
-        "racing suit",
-        "ski helmet",
-        "gloves",
-        "ski boots",
-        "skis",
-        "poles"
-      ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3645_DxO.jpg": [
-    {
-      "position": "center of image, skiing past orange gate",
-      "outfit_description": "Skier wearing bib number 420, racing in purple and black suit with white bib overlay. Black helmet with blue tinted goggles. Purple suit with black accents on sleeves and sides. Black gloves with fluorescent yellow/green accents. Racing skis with red, white and black graphics. Red and yellow ski poles. Dark colored ski boots.",
-      "bib_number": "420",
-      "equipment_brands": [],
-      "helmet_colors": [
-        "black"
-      ],
-      "helmet_patterns": [
-        "solid"
-      ],
-      "patterns": [
-        "solid purple with black color blocking"
-      ],
-      "primary_colors": [
-        "purple",
-        "black",
-        "white"
-      ],
-      "clothing_items": [
-        "racing bib",
-        "ski suit",
-        "helmet",
-        "goggles",
-        "gloves",
-        "ski boots"
-      ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3649_DxO.jpg": [
-    {
-      "position": "center of image",
-      "outfit_description": "Young skier wearing a purple and white racing vest over purple long sleeves. The vest displays what appears to be a bib number in the blue/dark section. Wearing a black helmet with Boll\u00e9 branding visible. Purple ski pants with protective padding. Blue ski boots with orange accents. Holding poles with one red and one with neon yellow/green coloring. Black gloves. Orange goggles/visor. Racing through a course marked by blue and orange gates.",
-      "bib_number": "not clearly readable",
-      "equipment_brands": [
-        "Boll\u00e9"
-      ],
-      "helmet_colors": [
-        "black"
-      ],
-      "helmet_patterns": [
-        "solid color with brand logo"
-      ],
-      "patterns": [
-        "two-tone vest design",
-        "solid purple sections"
-      ],
-      "primary_colors": [
-        "purple",
-        "white",
-        "black"
-      ],
-      "clothing_items": [
-        "racing vest/bib",
-        "long sleeve base layer",
-        "ski pants",
-        "ski boots",
         "gloves",
         "helmet",
         "goggles"
       ]
     }
   ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3657_DxO.jpg": [
+  "/Users/myee/Downloads/Photos-3-001/_DSC3630_DxO.jpg": [
     {
-      "position": "center of image, main subject skiing past orange gate",
-      "outfit_description": "Young skier wearing a white helmet with blue tinted goggles. Wearing a green jacket over a white racing bib with number visible. Black ski pants with dark/charcoal coloring. Red/coral colored gloves. Using black skis with red accents and black ski poles with red grips. The racing bib appears to have a number but exact digits are not clearly readable from this angle. No visible brand logos clearly identifiable on equipment.",
+      "position": "center of image",
+      "outfit_description": "Young skier wearing a SMITH branded white/silver helmet with black accents and blue details. Dark goggles with blue strap. Navy blue and royal blue racing suit with white shoulder area and striped pattern on torso. Red and white accents on the suit. Pink/magenta colored poles. HEAD branded white skis. Dark colored ski boots with blue/teal accents. Protective gear visible including what appears to be racing padding.",
+      "bib_number": null,
+      "equipment_brands": [
+        "SMITH",
+        "HEAD"
+      ],
+      "helmet_brand": "SMITH",
+      "helmet_colors": [
+        "white",
+        "silver",
+        "black",
+        "blue"
+      ],
+      "helmet_patterns": [
+        "brand logo",
+        "multi-color design"
+      ],
+      "goggle_lens_color": "dark/tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark",
+        "blue",
+        "teal"
+      ],
+      "patterns": [
+        "horizontal stripes on torso",
+        "color blocking"
+      ],
+      "primary_colors": [
+        "navy blue",
+        "royal blue",
+        "white"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "gloves",
+        "helmet",
+        "goggles",
+        "ski boots"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3645_DxO.jpg": [
+    {
+      "position": "center of image, skiing past orange gate",
+      "outfit_description": "Skier wearing a white racing bib with number that appears to be in the 20s range but not clearly readable with certainty. Black helmet with blue tinted goggles and blue strap. Purple and black racing suit with purple predominant on upper body and legs. Black sections on torso and gloves. Skiing on skis with red and black graphics. Using poles with red grips. Racing boots appear to be dark colored with some accent details.",
       "bib_number": null,
       "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "black"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "blue tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark colored"
+      ],
+      "patterns": [
+        "solid color blocks"
+      ],
+      "primary_colors": [
+        "purple",
+        "black",
+        "white"
+      ],
+      "clothing_items": [
+        "racing bib",
+        "racing suit",
+        "gloves",
+        "helmet",
+        "goggles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3649_DxO.jpg": [
+    {
+      "position": "center of image",
+      "outfit_description": "Young skier wearing a helmet with goggles featuring orange/amber tinted lenses and blue goggle straps. White bib vest over purple long-sleeve top. Black pants with purple accents/padding on thighs and knees. Blue ski boots with orange/red accents. Black gloves. Holding ski poles with one red pole visible and one pole with green/yellow accents. Racing/competition setting indicated by bib vest and course markers.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "black",
+        "dark gray"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "orange/amber tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "blue",
+        "orange",
+        "red"
+      ],
+      "patterns": [
+        "solid colors",
+        "color blocking"
+      ],
+      "primary_colors": [
+        "purple",
+        "white",
+        "black",
+        "blue"
+      ],
+      "clothing_items": [
+        "helmet",
+        "goggles",
+        "white bib vest",
+        "purple long-sleeve top",
+        "black pants with purple accents",
+        "blue ski boots",
+        "black gloves",
+        "ski poles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3657_DxO.jpg": [
+    {
+      "position": "center of image, skiing downhill past orange gate",
+      "outfit_description": "Skier wearing white helmet with blue-tinted goggles. Green/lime-colored jacket with black and white accents. Black ski pants. Red ski gloves visible. Black skis with red accents. White competition bib with number visible but not fully clear due to angle and motion. Skier is in active racing position navigating past an orange gate marker.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
       "helmet_colors": [
         "white"
       ],
       "helmet_patterns": [
         "solid"
       ],
+      "goggle_lens_color": "blue-tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "black"
+      ],
       "patterns": [
-        "solid green jacket",
-        "solid black pants",
+        "solid jacket",
         "white racing bib"
+      ],
+      "primary_colors": [
+        "green",
+        "lime",
+        "black",
+        "white"
+      ],
+      "clothing_items": [
+        "racing bib",
+        "ski jacket",
+        "ski pants",
+        "gloves",
+        "helmet",
+        "goggles"
+      ]
+    },
+    {
+      "position": "background right, partial visibility",
+      "outfit_description": "Person in yellow/high-visibility jacket visible in the background right side of the image. Very limited detail visible due to distance and fog/weather conditions.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "yellow",
+        "high-visibility"
+      ],
+      "clothing_items": [
+        "jacket"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3664_DxO.jpg": [
+    {
+      "position": "center of image",
+      "outfit_description": "Skier wearing a white helmet with blue-tinted mirrored goggles. Green/lime colored jacket over a white competition bib. Black ski pants with Helly Hansen (HH) branding visible. Black and red skis. Black ski boots with red accents. Holding black ski poles with red grips. The bib appears to show a number but not all digits are clearly readable due to the arm position and angle.",
+      "bib_number": null,
+      "equipment_brands": [
+        "Helly Hansen"
+      ],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "white"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "white",
+      "boot_brand": null,
+      "boot_colors": [
+        "black",
+        "red"
+      ],
+      "patterns": [
+        "solid colors"
       ],
       "primary_colors": [
         "green",
@@ -229,101 +364,56 @@
         "black"
       ],
       "clothing_items": [
-        "white helmet",
-        "blue goggles",
-        "green jacket",
-        "white racing bib",
-        "black ski pants",
-        "red gloves",
-        "black skis",
-        "ski poles"
-      ]
-    },
-    {
-      "position": "background right, blurred figure",
-      "outfit_description": "Blurred figure in far background wearing what appears to be a yellow/fluorescent yellow jacket or vest. Details of equipment and other gear not clearly visible due to distance and image blur.",
-      "bib_number": null,
-      "equipment_brands": [],
-      "helmet_colors": [],
-      "helmet_patterns": [],
-      "patterns": [
-        "solid"
-      ],
-      "primary_colors": [
-        "yellow"
-      ],
-      "clothing_items": [
-        "yellow jacket/vest"
-      ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3664_DxO.jpg": [
-    {
-      "position": "center of image",
-      "outfit_description": "Skier wearing white helmet with blue-tinted goggles. Racing bib visible showing partial number. Bright lime green/chartreuse jacket with white racing vest/bib over it. Dark navy/black pants with Helly Hansen (HH) branding visible. Black and red skis. Black ski poles with red grips/tips. Black ski boots with red accents.",
-      "bib_number": null,
-      "equipment_brands": [
-        "Helly Hansen"
-      ],
-      "helmet_colors": [
-        "white"
-      ],
-      "helmet_patterns": [
-        "solid"
-      ],
-      "patterns": [
-        "solid green jacket",
-        "white racing vest"
-      ],
-      "primary_colors": [
-        "lime green",
-        "white",
-        "black",
-        "navy"
-      ],
-      "clothing_items": [
         "helmet",
         "goggles",
-        "racing bib/vest",
-        "jacket",
-        "pants",
+        "green jacket",
+        "white competition bib",
+        "black pants",
         "ski boots",
-        "skis",
-        "ski poles"
+        "gloves",
+        "ski poles",
+        "skis"
       ]
     }
   ],
   "/Users/myee/Downloads/Photos-3-001/_DSC3675_DxO.jpg": [
     {
       "position": "center of image, skiing downhill",
-      "outfit_description": "Skier wearing bib number 21 in a blue bib. White helmet with blue-tinted goggles. Green jacket with white chest panel/bib attachment. Dark gray/charcoal pants. Red skis (appears to be Rossignol brand based on graphics). Red and black ski poles with red grips. Black ski boots. White and green color-blocked racing outfit.",
-      "bib_number": "21",
-      "equipment_brands": [
-        "Rossignol"
-      ],
+      "outfit_description": "Skier wearing white helmet with blue mirrored goggles. Green long-sleeve jacket/top with white front panel. Wearing a racing bib number 27 on the white chest panel with blue and red stripes. Dark gray/charcoal ski pants. Red and black ski boots. Using red-tipped ski poles. Red skis with graphics. White gloves with red accents.",
+      "bib_number": "27",
+      "equipment_brands": [],
+      "helmet_brand": null,
       "helmet_colors": [
         "white"
       ],
       "helmet_patterns": [
-        "solid white"
+        "solid"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "white",
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "black"
       ],
       "patterns": [
-        "color block design with green sleeves and white chest panel",
-        "racing bib overlay"
+        "color blocking",
+        "striped bib"
       ],
       "primary_colors": [
         "green",
         "white",
-        "dark gray"
+        "gray"
       ],
       "clothing_items": [
         "helmet",
         "goggles",
-        "jacket",
+        "green jacket",
+        "white front panel",
         "racing bib",
-        "pants",
-        "gloves",
+        "gray ski pants",
         "ski boots",
+        "gloves",
         "skis",
         "poles"
       ]
@@ -331,10 +421,11 @@
   ],
   "/Users/myee/Downloads/Photos-3-001/_DSC3681_DxO.jpg": [
     {
-      "position": "center-right of image, skiing past orange gate flag",
-      "outfit_description": "Young skier in competitive alpine racing position wearing a white/silver helmet with blue-tinted mirror goggles. Racing suit features dark base color (black/charcoal) with yellow/neon green graphic designs and patterns on the upper body. Blue pants/lower portion. Red racing ski boots. No visible bib number from this angle. Helmet appears solid white/silver without visible brand markings from this view. Skier using proper racing technique navigating around the slalom gate.",
+      "position": "center-right of image, navigating around orange flag gate",
+      "outfit_description": "Young skier in racing position wearing a white/silver helmet with blue-tinted mirrored goggles. The racer wears a black technical jacket with yellow/fluorescent green accents and graphics on the sleeves and torso. Dark blue/navy racing pants. Red and black ski boots. Full racing setup navigating a slalom gate.",
       "bib_number": null,
       "equipment_brands": [],
+      "helmet_brand": null,
       "helmet_colors": [
         "white",
         "silver"
@@ -342,16 +433,100 @@
       "helmet_patterns": [
         "solid"
       ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "black"
+      ],
       "patterns": [
-        "graphic designs",
-        "yellow accents"
+        "graphics on jacket sleeves",
+        "technical racing design"
       ],
       "primary_colors": [
         "black",
-        "charcoal",
-        "blue",
-        "yellow",
-        "neon green"
+        "navy blue",
+        "yellow-green accent"
+      ],
+      "clothing_items": [
+        "racing jacket",
+        "racing pants",
+        "helmet",
+        "goggles",
+        "ski boots"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3685_DxO.jpg": [
+    {
+      "position": "center of image, skiing downhill past orange gate",
+      "outfit_description": "Skier wearing white helmet with blue mirrored goggles. Dark navy/black racing suit with white striped pattern and pink/magenta accents on sides. Yellow and black patterned racing gloves. Red and black ski boots (appears to be red base with black accents). Racing on skis with red base/bottom visible. Number visible on bib appears to be '100' but partially obscured by body position and motion, cannot confirm all digits with 100% certainty.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "white"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "dark/black",
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "black"
+      ],
+      "patterns": [
+        "white stripes on navy base",
+        "geometric racing stripes"
+      ],
+      "primary_colors": [
+        "navy",
+        "black",
+        "white",
+        "pink",
+        "magenta"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "racing gloves",
+        "helmet",
+        "goggles",
+        "ski boots"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3692_DxO.jpg": [
+    {
+      "position": "center of image",
+      "outfit_description": "Skier in aerodynamic tuck position wearing a white helmet with blue mirrored goggles. Navy blue and red racing suit with geometric stripe patterns. Bright red/pink ski boots. Pink/magenta colored ski poles. Red skis visible underneath. Navy blue pants with blue and yellow accents. Gloves appear dark colored with yellow/fluorescent details.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "white"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "pink"
+      ],
+      "patterns": [
+        "geometric stripes",
+        "diagonal stripes",
+        "racing design"
+      ],
+      "primary_colors": [
+        "navy blue",
+        "red",
+        "white"
       ],
       "clothing_items": [
         "racing suit",
@@ -362,131 +537,453 @@
       ]
     }
   ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3685_DxO.jpg": [
+  "/Users/myee/Downloads/Photos-3-001/_DSC3695_DxO.jpg": [
     {
-      "position": "center of image, skiing past orange gate marker",
-      "outfit_description": "Skier wearing white helmet with blue-tinted mirrored goggles. Navy blue and white striped racing suit with 'BRANWIN' logo visible. Black and yellow/lime colored gloves. Blue racing pants. Red ski boots. Racing on red and black skis. Holding pink/magenta colored ski poles with yellow/green grips. No bib number visible on front of racer.",
+      "position": "center of image, mid-air during jump",
+      "outfit_description": "Skier wearing a white helmet with blue mirrored goggles and blue goggle strap. Navy blue and white racing suit with possible yellow/gold accents. Red Atomic skis clearly visible. Bright pink/magenta colored poles with yellow/green grips. Navy blue gloves with yellow accents. Red ski boots. The suit appears to have striped or geometric patterns in navy, white, and possibly blue/yellow. No bib number clearly visible from this angle.",
       "bib_number": null,
       "equipment_brands": [
-        "BRANWIN"
+        "ATOMIC"
       ],
+      "helmet_brand": null,
       "helmet_colors": [
         "white"
       ],
       "helmet_patterns": [
         "solid"
       ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "red"
+      ],
       "patterns": [
-        "horizontal stripes",
-        "logo graphics"
+        "striped",
+        "geometric design on suit"
       ],
       "primary_colors": [
         "navy blue",
         "white",
-        "blue"
+        "red"
       ],
       "clothing_items": [
         "racing suit",
-        "helmet",
-        "goggles",
         "gloves",
-        "ski boots",
-        "skis",
-        "poles"
-      ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3692_DxO.jpg": [
-    {
-      "position": "center of image, mid-slope",
-      "outfit_description": "Skier wearing bib number 5 on chest. White helmet with blue-tinted mirrored visor/goggles. Racing suit features blue/navy and red/pink color blocking with 'SKI' text visible on the suit. Bright pink/magenta ski poles with yellow/green pole grips. Red skis and red ski boots. Navy/dark blue pants section with lighter blue upper body portion of suit. Black gloves.",
-      "bib_number": "5",
-      "equipment_brands": [],
-      "helmet_colors": [
-        "white"
-      ],
-      "helmet_patterns": [
-        "solid white"
-      ],
-      "patterns": [
-        "color blocking",
-        "text graphics"
-      ],
-      "primary_colors": [
-        "blue",
-        "navy",
-        "red",
-        "pink"
-      ],
-      "clothing_items": [
-        "racing suit",
         "helmet",
-        "goggles",
-        "gloves",
-        "ski boots",
-        "skis",
-        "poles"
-      ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3695_DxO.jpg": [
-    {
-      "position": "center of image, mid-air during jump",
-      "outfit_description": "Skier wearing bib number 14 in a racing suit. Using red ATOMIC skis and pink/magenta poles. White helmet with blue-tinted visor/goggles. Racing suit is primarily navy blue with white panels on the chest/shoulder area, featuring diagonal stripe patterns and yellow/black accents. Black gloves with yellow details. Suit appears to have racing graphics and sponsor logos. The athlete is captured mid-jump in an aerodynamic tuck position.",
-      "bib_number": "14",
-      "equipment_brands": [
-        "ATOMIC"
-      ],
-      "helmet_colors": [
-        "white",
-        "silver"
-      ],
-      "helmet_patterns": [
-        "solid colored",
-        "simple design"
-      ],
-      "patterns": [
-        "diagonal stripes",
-        "color blocking",
-        "racing graphics",
-        "geometric patterns"
-      ],
-      "primary_colors": [
-        "navy blue",
-        "white",
-        "black"
-      ],
-      "clothing_items": [
-        "racing suit",
-        "helmet",
-        "goggles",
-        "gloves",
-        "ski boots"
+        "goggles"
       ]
     }
   ],
   "/Users/myee/Downloads/Photos-3-001/_DSC3698_DxO.jpg": [
     {
-      "position": "center of frame, mid-air during jump",
-      "outfit_description": "Skier in mid-air wearing a white helmet with blue-tinted visor/goggles. Racing suit features white upper portion with blue sleeves and blue lower portion (pants). Yellow and red accent stripes/details visible on the suit. Using pink/magenta colored poles. Red skis with white graphics. Black gloves visible. Bib number not clearly visible from this angle. Helmet appears to be solid white/light colored design.",
+      "position": "center of image, mid-air",
+      "outfit_description": "Skier in mid-air wearing white helmet with blue mirrored goggle lens and colorful goggle strap. Racing suit features white upper portion with blue and dark navy sections, with yellow accent stripes. Gloves appear to be black with yellow/fluorescent accents. Pink/magenta colored ski poles. Red skis (appears to be ATOMIC brand based on graphics). Ski boots appear to be dark colored racing boots. Bib number not clearly readable due to body position and angle.",
       "bib_number": null,
-      "equipment_brands": [],
+      "equipment_brands": [
+        "ATOMIC"
+      ],
+      "helmet_brand": null,
       "helmet_colors": [
-        "white",
-        "light gray"
+        "white"
       ],
       "helmet_patterns": [
-        "solid colored"
+        "solid"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "multicolored",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark",
+        "red"
       ],
       "patterns": [
         "color blocking",
-        "racing stripes",
-        "accent stripes"
+        "striped accents"
       ],
       "primary_colors": [
         "white",
         "blue",
+        "navy",
+        "yellow"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "helmet",
+        "goggles",
+        "gloves"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3713_DxO.jpg": [
+    {
+      "position": "center-right of image, on slope navigating course",
+      "outfit_description": "Young skier wearing a gray/dark helmet with pink/magenta goggle lens and multicolored strap. Pink/light pink jacket over black ski pants. Pink ski poles. Skis appear to have pink/orange bindings or accents. Black gloves. No bib number visible.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "gray",
+        "dark gray"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "pink/magenta tinted",
+      "goggle_strap_color": "multicolored",
+      "boot_brand": null,
+      "boot_colors": [
+        "pink",
+        "black"
+      ],
+      "patterns": [
+        "solid"
+      ],
+      "primary_colors": [
+        "pink",
+        "black"
+      ],
+      "clothing_items": [
+        "helmet",
+        "goggles",
+        "pink jacket",
+        "black ski pants",
+        "gloves",
+        "skis",
+        "poles"
+      ]
+    },
+    {
+      "position": "upper left background, standing on slope",
+      "outfit_description": "Person in background wearing dark jacket with red accents. Due to fog and distance, details are not clearly visible. Appears to be standing with another person nearby.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "dark/black",
         "red"
+      ],
+      "clothing_items": [
+        "jacket"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3717_DxO.jpg": [
+    {
+      "position": "center of image",
+      "outfit_description": "Skier navigating around an orange slalom gate wearing a colorful helmet with multi-colored geometric patterns including pink, yellow, and other bright colors on a dark base. The helmet appears to be branded. Wearing purple/pink tinted goggles. Pink/light colored long-sleeve top with white or light sections. Black ski pants. Silver/gray ski boots with pink and orange/red accents. Using pink/magenta colored ski poles. The skier is in an active racing position passing close to the gate marker.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "black",
+        "pink",
+        "yellow",
+        "multi-color"
+      ],
+      "helmet_patterns": [
+        "geometric color blocks",
+        "multi-colored graphics"
+      ],
+      "goggle_lens_color": "purple/pink tinted",
+      "goggle_strap_color": "dark",
+      "boot_brand": null,
+      "boot_colors": [
+        "silver",
+        "gray",
+        "pink",
+        "orange",
+        "red"
+      ],
+      "patterns": [
+        "solid colors",
+        "color blocking"
+      ],
+      "primary_colors": [
+        "pink",
+        "light pink",
+        "white",
+        "black"
+      ],
+      "clothing_items": [
+        "long-sleeve top",
+        "ski pants",
+        "helmet",
+        "goggles",
+        "gloves",
+        "ski boots"
+      ]
+    },
+    {
+      "position": "background upper left",
+      "outfit_description": "Two blurred figures visible in the far background on the snowy slope. Details are too indistinct to make out specific gear, colors, or equipment due to distance and foggy/snowy conditions.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [],
+      "clothing_items": []
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3728_DxO.jpg": [
+    {
+      "position": "center of image, skiing downhill",
+      "outfit_description": "Skier wearing an Oakley branded black helmet with colorful graphics including pink and yellow accents. Pink/purple tinted goggles with dark strap. Light pink/mauve colored top or jersey with blue graphic design on chest area. Black ski pants. Black gloves. Pink and black colored skis with graphics. Pink ski poles. No clearly readable bib number visible.",
+      "bib_number": null,
+      "equipment_brands": [
+        "Oakley"
+      ],
+      "helmet_brand": "Oakley",
+      "helmet_colors": [
+        "black",
+        "pink",
+        "yellow"
+      ],
+      "helmet_patterns": [
+        "colorful graphics",
+        "brand logo"
+      ],
+      "goggle_lens_color": "pink/purple tinted",
+      "goggle_strap_color": "dark/black",
+      "boot_brand": null,
+      "boot_colors": [
+        "black"
+      ],
+      "patterns": [
+        "blue graphic on chest"
+      ],
+      "primary_colors": [
+        "light pink",
+        "mauve",
+        "black"
+      ],
+      "clothing_items": [
+        "light pink jersey/top",
+        "black ski pants",
+        "black gloves",
+        "black helmet",
+        "goggles"
+      ]
+    },
+    {
+      "position": "background left, blurred figure near red safety netting",
+      "outfit_description": "Distant blurred figure visible in background near red safety netting. Yellow/bright colored clothing visible but too blurred and distant for detailed description.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "yellow/bright"
+      ],
+      "clothing_items": []
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3739_DxO.jpg": [
+    {
+      "position": "center of image, skiing downhill on race course",
+      "outfit_description": "Skier wearing bib number 130 (clearly visible on white background bib). Navy blue helmet with protective gear. Green jacket/top layer with dark navy/black mid-layer vest or bib. Yellow/gold colored ski pants. Red gloves. The bib displays '130' in blue digits. Racing setup with poles, navigating through blue and orange gate markers on snowy course.",
+      "bib_number": "130",
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "navy blue",
+        "dark blue"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "tinted",
+      "goggle_strap_color": "dark",
+      "boot_brand": null,
+      "boot_colors": [
+        "blue",
+        "red"
+      ],
+      "patterns": [
+        "solid colors",
+        "racing bib number"
+      ],
+      "primary_colors": [
+        "green",
+        "yellow",
+        "gold",
+        "navy blue",
+        "white"
+      ],
+      "clothing_items": [
+        "green jacket",
+        "yellow pants",
+        "red gloves",
+        "white racing bib",
+        "navy vest",
+        "helmet",
+        "goggles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3745_DxO.jpg": [
+    {
+      "position": "center-right of image, skiing past orange flag",
+      "outfit_description": "Young skier wearing bib number 430 (clearly visible on white bib). Blue/grey helmet with dark goggles. Green long-sleeve jacket/top with white racing bib over it. Yellow/gold colored ski pants. Red/coral colored gloves. Blue and red/coral colored skis. Using red ski poles. Complete racing setup navigating around slalom gate.",
+      "bib_number": "430",
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "blue",
+        "grey"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "dark tinted",
+      "goggle_strap_color": "dark",
+      "boot_brand": null,
+      "boot_colors": [
+        "blue"
+      ],
+      "patterns": [
+        "solid colors"
+      ],
+      "primary_colors": [
+        "green",
+        "yellow",
+        "white",
+        "blue"
+      ],
+      "clothing_items": [
+        "green jacket",
+        "yellow ski pants",
+        "white racing bib",
+        "red gloves",
+        "helmet",
+        "goggles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3750_DxO.jpg": [
+    {
+      "position": "center of image",
+      "outfit_description": "Skier wearing a blue helmet with goggles, white racing bib with number 80 printed in blue, green long-sleeve top, yellow/mustard ski pants, and red gloves. The skier has dark blue ski boots and is holding ski poles. The bib number 80 is clearly visible on the white vest over the green top.",
+      "bib_number": "80",
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "blue"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "tinted",
+      "goggle_strap_color": "dark",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark blue",
+        "navy"
+      ],
+      "patterns": [
+        "solid colors"
+      ],
+      "primary_colors": [
+        "green",
+        "yellow",
+        "white",
+        "blue"
+      ],
+      "clothing_items": [
+        "helmet",
+        "goggles",
+        "racing bib",
+        "green jacket",
+        "yellow pants",
+        "red gloves",
+        "ski boots",
+        "ski poles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3760_DxO.jpg": [
+    {
+      "position": "center foreground",
+      "outfit_description": "Skier wearing a blue helmet with white goggles, green long-sleeve jacket with blue/purple accents on the shoulders, yellow/mustard ski pants, and blue ski boots. Red gloves and red ski poles. The skier is wearing racing skis with red/black pattern. No bib number visible. The helmet appears to be a solid blue color with goggles featuring a white or light-colored strap.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "blue"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "clear or light tinted",
+      "goggle_strap_color": "white",
+      "boot_brand": null,
+      "boot_colors": [
+        "blue"
+      ],
+      "patterns": [
+        "solid colors",
+        "color blocking"
+      ],
+      "primary_colors": [
+        "green",
+        "yellow",
+        "blue"
+      ],
+      "clothing_items": [
+        "jacket",
+        "ski pants",
+        "gloves",
+        "helmet",
+        "goggles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3771_DxO.jpg": [
+    {
+      "position": "center foreground - primary subject skiing past orange gate",
+      "outfit_description": "Young skier wearing a black helmet with yellow/orange mirrored goggles. Racing bib number partially visible but not all digits clearly readable. Dark racing suit (black/dark gray) with white panel across chest/torso area. Black gloves holding yellow/lime green ski poles. Black ski boots. White race bib with blue number visible on chest but digits not fully clear due to angle and motion.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "black"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "yellow/orange mirrored",
+      "goggle_strap_color": "black",
+      "boot_brand": null,
+      "boot_colors": [
+        "black"
+      ],
+      "patterns": [
+        "color block design",
+        "white chest panel"
+      ],
+      "primary_colors": [
+        "black",
+        "white",
+        "dark gray"
       ],
       "clothing_items": [
         "racing suit",
@@ -495,56 +992,479 @@
         "gloves",
         "ski boots"
       ]
-    }
-  ],
-  "/Users/myee/Downloads/Photos-3-001/_DSC3713_DxO.jpg": [
+    },
     {
-      "position": "center-right of image, skiing past orange flag",
-      "outfit_description": "Young skier wearing a gray/dark helmet with pink/yellow accent sticker on top. Pink/light pink jacket as upper layer. Black ski pants. Pink poles. Pink and black ski boots. Gray goggles with tinted lens. No visible bib number. Skis appear to be in gray/dark color scheme with pink/coral colored bindings or accents.",
+      "position": "background left - blurred figure standing",
+      "outfit_description": "Blurred figure in background wearing what appears to be a red and blue/teal colored jacket or outerwear. Too far away and out of focus to determine specific details about equipment brands or gear.",
       "bib_number": null,
       "equipment_brands": [],
-      "helmet_colors": [
-        "gray",
-        "dark gray"
-      ],
-      "helmet_patterns": [
-        "solid with small accent sticker"
-      ],
-      "patterns": [
-        "solid colors"
-      ],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
       "primary_colors": [
-        "pink",
-        "black",
-        "gray"
+        "red",
+        "blue/teal"
       ],
       "clothing_items": [
+        "jacket"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3775_DxO.jpg": [
+    {
+      "position": "center foreground - main subject",
+      "outfit_description": "Young skier wearing a black helmet with orange/yellow mirrored goggles. Wearing a distinctive racing suit with white, blue, black and purple geometric pattern design. Black gloves holding yellow and black ski poles. Dark colored ski boots. The skier is navigating near an orange and white gate flag on a slalom course. No bib number visible or clearly readable.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "black"
+      ],
+      "helmet_patterns": [
+        "solid"
+      ],
+      "goggle_lens_color": "orange/yellow mirrored",
+      "goggle_strap_color": "black",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark blue",
+        "black"
+      ],
+      "patterns": [
+        "geometric color blocks",
+        "racing design"
+      ],
+      "primary_colors": [
+        "white",
+        "blue",
+        "black",
+        "purple"
+      ],
+      "clothing_items": [
+        "racing suit",
         "helmet",
         "goggles",
-        "jacket",
         "gloves",
-        "ski pants",
-        "ski boots",
-        "poles",
-        "skis"
+        "ski boots"
       ]
     },
     {
-      "position": "background left, standing figures",
-      "outfit_description": "Two figures visible in foggy background. One appears to be wearing dark clothing with red accents. Details are obscured by distance and fog/weather conditions. No bib numbers visible. No specific brands identifiable due to distance and poor visibility.",
+      "position": "background left",
+      "outfit_description": "Person standing in foggy background wearing a light colored top with yellow/reflective vest or marking. Details obscured by distance and fog conditions.",
       "bib_number": null,
       "equipment_brands": [],
+      "helmet_brand": null,
       "helmet_colors": [],
       "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "light colored",
+        "yellow"
+      ],
+      "clothing_items": [
+        "jacket",
+        "vest"
+      ]
+    },
+    {
+      "position": "background right - two figures",
+      "outfit_description": "Two people standing together in foggy background. One appears to be wearing red/pink colored jacket or clothing. Details heavily obscured by distance and poor visibility conditions.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "red",
+        "pink"
+      ],
+      "clothing_items": [
+        "jacket"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3785_DxO.jpg": [
+    {
+      "position": "center of frame, mid-slope",
+      "outfit_description": "Skier wearing bib number 83 (clearly visible on back) with HEAD brand skis, black helmet with yellow/lime accents or attachments, light blue/white icy pattern racing suit with darker accents. Using bright yellow/fluorescent yellow racing poles. Ski boots appear to be dark colored with yellow/lime accent markings. The racing suit has a frosted or icy graphic pattern in light blue and white tones.",
+      "bib_number": "83",
+      "equipment_brands": [
+        "HEAD"
+      ],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "black",
+        "yellow"
+      ],
+      "helmet_patterns": [
+        "solid with accent elements"
+      ],
+      "goggle_lens_color": null,
+      "goggle_strap_color": "yellow",
+      "boot_brand": null,
+      "boot_colors": [
+        "dark blue or black",
+        "yellow"
+      ],
       "patterns": [
-        "not clearly visible"
+        "icy/frosted graphic pattern",
+        "light blue and white swirl design"
       ],
       "primary_colors": [
+        "light blue",
+        "white",
+        "blue"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "gloves",
+        "helmet",
+        "ski boots"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3793_DxO.jpg": [
+    {
+      "position": "center foreground - main skier",
+      "outfit_description": "Young skier wearing a white helmet with pink/magenta top section. Goggles with dark tinted lens and light colored strap. Dark gray/charcoal colored racing suit or jacket with lime green/yellow gloves that are very prominent. Red/orange ski boots. Appears to be navigating between orange and green race gates on a slalom course in foggy conditions.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "white",
+        "pink",
+        "magenta"
+      ],
+      "helmet_patterns": [
+        "two-tone color block"
+      ],
+      "goggle_lens_color": "dark tinted",
+      "goggle_strap_color": "light colored",
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "orange"
+      ],
+      "patterns": [
+        "solid"
+      ],
+      "primary_colors": [
+        "dark gray",
+        "charcoal"
+      ],
+      "clothing_items": [
+        "racing suit/jacket",
+        "lime green gloves",
+        "helmet",
+        "goggles"
+      ]
+    },
+    {
+      "position": "background left",
+      "outfit_description": "Person standing in background wearing what appears to be a dark colored jacket with red accents or details. Very limited detail visible due to foggy conditions and distance from camera.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
         "dark",
+        "red accents"
+      ],
+      "clothing_items": [
+        "jacket"
+      ]
+    },
+    {
+      "position": "background center-left",
+      "outfit_description": "Silhouette of a person standing in the background. Wearing dark clothing, appears to be observing the race. Details obscured by heavy fog and distance.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "dark"
+      ],
+      "clothing_items": [
+        "outerwear"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3799_DxO.jpg": [
+    {
+      "position": "center of image, skiing past orange gate",
+      "outfit_description": "Young skier wearing white helmet with pink/magenta accent on top, blue-tinted visor/goggles. Navy blue racing suit with diagonal white striping pattern across torso. Yellow and black racing gloves. Red/orange ski boots with white and black accents. Using racing skis with yellow/neon accents. Skier is in a racing tuck position navigating around an orange slalom gate.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [
+        "white",
+        "pink",
+        "magenta"
+      ],
+      "helmet_patterns": [
+        "solid with accent stripe"
+      ],
+      "goggle_lens_color": "blue-tinted",
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "orange",
+        "white",
+        "black"
+      ],
+      "patterns": [
+        "diagonal white stripes",
+        "racing suit design"
+      ],
+      "primary_colors": [
+        "navy blue",
+        "white",
+        "yellow",
+        "black"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "racing gloves",
+        "helmet",
+        "ski boots"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3802_DxO.jpg": [
+    {
+      "position": "center of image, skiing on course",
+      "outfit_description": "Young skier wearing a white and pink POC helmet with blue mirrored goggle lens. Racing suit is primarily dark blue with yellow/neon green gloves. Red ski boots (appears to be Lange or similar racing brand) are very prominent. Black protective armor/padding visible on torso. Skis appear to be racing skis with red and yellow graphics visible on poles. No bib number clearly visible from this angle.",
+      "bib_number": null,
+      "equipment_brands": [
+        "POC"
+      ],
+      "helmet_brand": "POC",
+      "helmet_colors": [
+        "white",
+        "pink"
+      ],
+      "helmet_patterns": [
+        "solid color blocking"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "dark",
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "black"
+      ],
+      "patterns": [
+        "solid"
+      ],
+      "primary_colors": [
+        "dark blue",
+        "red",
+        "yellow/neon green"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "protective armor",
+        "gloves",
+        "ski boots",
+        "helmet",
+        "goggles"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3810_DxO.jpg": [
+    {
+      "position": "center of image, main subject skiing downhill",
+      "outfit_description": "Young skier wearing a white helmet with pink/magenta accent stripe and POC branding. Helmet has dark visor area. Blue mirrored goggles with blue strap. Racing suit is primarily blue with white diagonal striping pattern on torso area, with red accents. Bright red/orange ski boots (appears to be racing style). Yellow and black gloves. Red skis with yellow fluorescent tips visible. Skier is in motion on snowy slope.",
+      "bib_number": null,
+      "equipment_brands": [
+        "POC",
+        "SMITH"
+      ],
+      "helmet_brand": "POC",
+      "helmet_colors": [
+        "white",
+        "pink",
+        "black"
+      ],
+      "helmet_patterns": [
+        "horizontal stripe accent",
+        "branded"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "orange"
+      ],
+      "patterns": [
+        "diagonal white stripes",
+        "racing design"
+      ],
+      "primary_colors": [
+        "blue",
+        "white",
         "red"
       ],
       "clothing_items": [
-        "winter clothing"
+        "racing suit",
+        "ski boots",
+        "gloves",
+        "helmet",
+        "goggles"
+      ]
+    },
+    {
+      "position": "background, upper right area of image",
+      "outfit_description": "Person visible in far background near ski slope barriers wearing what appears to be yellow/fluorescent colored jacket or vest. Figure is blurred and out of focus due to distance and foggy conditions. Details not clearly discernible.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "yellow",
+        "fluorescent"
+      ],
+      "clothing_items": [
+        "jacket or vest"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3811_DxO.jpg": [
+    {
+      "position": "center of image",
+      "outfit_description": "Young skier wearing a white helmet with pink and black accents. Helmet appears to be HEAD brand. Blue mirrored goggles with blue strap. Blue racing suit with red accents and yellow trim details. Red Atomic ski boots with black accents. Holding red skis with yellow/green pole tips. Skis appear to be Atomic brand in red. Black gloves with yellow accents.",
+      "bib_number": null,
+      "equipment_brands": [
+        "HEAD",
+        "Atomic"
+      ],
+      "helmet_brand": "HEAD",
+      "helmet_colors": [
+        "white",
+        "pink",
+        "black"
+      ],
+      "helmet_patterns": [
+        "color block design"
+      ],
+      "goggle_lens_color": "blue mirrored",
+      "goggle_strap_color": "blue",
+      "boot_brand": "Atomic",
+      "boot_colors": [
+        "red",
+        "black"
+      ],
+      "patterns": [
+        "solid with accent trim"
+      ],
+      "primary_colors": [
+        "blue",
+        "red",
+        "white"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "gloves",
+        "helmet",
+        "goggles",
+        "ski boots"
+      ]
+    }
+  ],
+  "/Users/myee/Downloads/Photos-3-001/_DSC3813_DxO.jpg": [
+    {
+      "position": "center, airborne skier",
+      "outfit_description": "Skier mid-air wearing white helmet with pink/magenta graphic accent and POC branding. Blue racing goggles with blue-tinted lens and blue goggle strap. Blue racing suit with yellow trim/accents and white graphics/striping on the sleeves. Red ski boots. Red skis with white/light colored graphics. Red ski poles with yellow/green grips visible. No bib number clearly visible.",
+      "bib_number": null,
+      "equipment_brands": [
+        "POC"
+      ],
+      "helmet_brand": "POC",
+      "helmet_colors": [
+        "white",
+        "pink",
+        "black"
+      ],
+      "helmet_patterns": [
+        "pink/magenta curved accent design",
+        "POC branding"
+      ],
+      "goggle_lens_color": "blue tinted",
+      "goggle_strap_color": "blue",
+      "boot_brand": null,
+      "boot_colors": [
+        "red",
+        "black"
+      ],
+      "patterns": [
+        "yellow trim lines",
+        "white striped graphics on sleeves"
+      ],
+      "primary_colors": [
+        "blue",
+        "yellow",
+        "white"
+      ],
+      "clothing_items": [
+        "racing suit",
+        "ski boots",
+        "helmet",
+        "goggles",
+        "gloves"
+      ]
+    },
+    {
+      "position": "left side, blurred in foreground",
+      "outfit_description": "Partially visible person in foreground, heavily motion-blurred. Wearing what appears to be green or light-colored clothing. Only fragmentary details visible due to extreme blur and partial frame position. Red poles visible. Insufficient detail to determine brands or specific gear characteristics.",
+      "bib_number": null,
+      "equipment_brands": [],
+      "helmet_brand": null,
+      "helmet_colors": [],
+      "helmet_patterns": [],
+      "goggle_lens_color": null,
+      "goggle_strap_color": null,
+      "boot_brand": null,
+      "boot_colors": [],
+      "patterns": [],
+      "primary_colors": [
+        "green or light colored"
+      ],
+      "clothing_items": [
+        "poles visible"
       ]
     }
   ]
