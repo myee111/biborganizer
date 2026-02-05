@@ -1,7 +1,32 @@
 """
 Photo organization core logic.
-Handles directory scanning, face identification, organization planning, and file operations.
+
+Handles directory scanning, outfit detection, organization planning, and file operations.
 Supports both database mode and auto-cluster mode.
+
+CLUSTERING ALGORITHM (Auto-Cluster Mode):
+==========================================
+
+Two-priority matching system for racing/skiing photos:
+
+1. SHOT DATE (HIGHEST PRIORITY) ⏱️
+   • Photos ≤10s apart → Automatic 1.0 match (burst photography)
+   • Photos ≤30s apart → High priority 0.85 minimum
+   • Photos >30s apart → Falls back to visual similarity
+   • Uses EXIF DateTimeOriginal field only
+
+2. VISUAL SIMILARITY (PRIMARY MATCHING) 👁️
+   When timestamps >30s or missing:
+   • Helmet colors/patterns: 30%
+   • Ski boot colors/brand: 25%
+   • Clothing patterns: 25%
+   • Clothing colors: 15%
+   • Equipment brands: 5%
+
+NOTE: Bib numbers are detected for cluster NAMING (Racer_Bib_23)
+      but are NOT used for matching/clustering decisions.
+
+See CLUSTERING.md for comprehensive documentation.
 """
 
 import os
@@ -17,6 +42,7 @@ from tqdm import tqdm
 
 from v2.vertex_claude import detect_outfits, compare_outfits, extract_json
 from v2.config import load_config
+from v2.image_utils import get_image_timestamp
 
 
 # Supported image formats
@@ -262,20 +288,53 @@ def create_organization_plan(image_paths: List[str], outfit_db: Dict[str, str], 
 
 def auto_cluster_photos(image_paths: List[str], confidence_threshold: float = 0.5) -> Dict:
     """
-    Automatically cluster photos by outfit similarity without database (auto-cluster mode).
+    Automatically cluster photos by multi-priority matching without database.
+
+    CLUSTERING PRIORITY HIERARCHY:
+
+    1. SHOT DATE (HIGHEST PRIORITY) - From EXIF DateTimeOriginal
+       • ≤10 seconds apart → AUTOMATIC 1.0 match (immediate cluster)
+       • ≤30 seconds apart → HIGH PRIORITY 0.85 minimum
+       • >30 seconds → Falls back to visual similarity
+
+    2. VISUAL SIMILARITY - Outfit appearance (when timestamp >30s or missing)
+       • Helmet colors/patterns: 30% weight
+       • Ski boot colors/brand: 25% weight
+       • Clothing patterns: 25% weight
+       • Clothing colors: 15% weight
+       • Equipment brands: 5% weight
+
+    NOTE: Bib numbers are detected for NAMING clusters (Racer_Bib_23) but are
+          NOT used for matching. Only timestamp and visual similarity determine
+          which photos cluster together.
+
+    See CLUSTERING.md for detailed documentation.
 
     Process:
-    1. For each photo, detect outfits and get descriptions (with caching)
-    2. Compare against existing clusters based on HELMET, patterns, and colors
-    3. If similarity > threshold, add to existing cluster
-    4. If no match, create new cluster (Outfit_1, Outfit_2, etc.)
+    1. For each photo:
+       - Extract shot timestamp from EXIF
+       - Detect outfits and get descriptions (with caching)
+       - Extract bib number (for naming only)
+    2. Compare against existing clusters:
+       - First check timestamps (≤10s → automatic match)
+       - Then use visual similarity
+    3. If best score ≥ threshold, add to existing cluster
+    4. Otherwise create new cluster (Racer_Bib_XX or Outfit_N_colors)
 
     Args:
         image_paths: List of image file paths
-        confidence_threshold: Minimum similarity score for clustering (default: 0.5)
+        confidence_threshold: Minimum similarity for VISUAL matching (default: 0.5)
+                            Note: Timestamp matches override this threshold
 
     Returns:
-        Organization plan dictionary compatible with execute_organization_plan
+        Organization plan dictionary compatible with execute_organization_plan:
+        {
+            'single_person': {cluster_name: [paths]},
+            'multiple_people': {cluster_name: [paths]},
+            'no_faces': [paths],
+            'unknown': [],
+            'errors': []
+        }
     """
     # Load cache if it exists
     cache_file = Path('.outfit_detection_cache.json')
@@ -293,11 +352,27 @@ def auto_cluster_photos(image_paths: List[str], confidence_threshold: float = 0.
     comparison_count = 0
     api_calls_saved = 0
 
+    # Load timestamp clustering configuration
+    config = load_config()
+    timestamp_exact_match = config['timestamp_exact_match_seconds']
+    timestamp_high_priority = config['timestamp_high_priority_seconds']
+
     print(f"\nAuto-clustering photos by helmet/outfit similarity (threshold: {confidence_threshold})...")
+    print(f"Timestamp clustering: ≤{timestamp_exact_match}s = auto-match, ≤{timestamp_high_priority}s = high priority")
     print("Tip: Lower threshold = more grouping, Higher threshold = more separate groups\n")
 
     for image_path in tqdm(image_paths, desc="Clustering by outfit", unit="photo"):
         try:
+            # Get photo timestamp first
+            photo_timestamp = get_image_timestamp(image_path)
+            filename = os.path.basename(image_path)
+
+            # Always output the shot date for each photo
+            if photo_timestamp:
+                print(f"\n{filename}: Shot Date: {photo_timestamp.strftime('%Y-%m-%d %H:%M:%S')}")
+            else:
+                print(f"\n{filename}: Shot Date: [No EXIF timestamp]")
+
             # Check cache first
             cache_key = str(Path(image_path).absolute())
             if cache_key in outfit_cache:
@@ -333,8 +408,6 @@ def auto_cluster_photos(image_paths: List[str], confidence_threshold: float = 0.
 
                 # Debug: show outfit info for first few photos
                 if next_id <= 3:
-                    filename = os.path.basename(image_path)
-                    print(f"\n>>> Photo: {filename}")
                     print(f"    Bib number: {bib_number}")
                     print(f"    Outfit data: {outfits[0]}")
                     print(f"    Description length: {len(outfit_desc)} chars")
@@ -353,6 +426,45 @@ def auto_cluster_photos(image_paths: List[str], confidence_threshold: float = 0.
                     if isinstance(cluster_data, dict):
                         # Enable debug for first 5 comparisons to see what's happening
                         debug = comparison_count < 5
+
+                        # HIGHEST PRIORITY: TIMESTAMP MATCHING
+                        # If both photos have timestamps and were taken within seconds, cluster immediately
+                        if photo_timestamp and cluster_data.get('timestamp'):
+                            time_diff = abs((photo_timestamp - cluster_data['timestamp']).total_seconds())
+
+                            if time_diff <= timestamp_exact_match:
+                                # Photos within exact match window - AUTOMATIC MATCH
+                                if debug:
+                                    print(f"\n>>> Comparison #{comparison_count + 1}: {cluster_id}")
+                                    print(f"    ⏱️  TIMESTAMP MATCH: {time_diff:.1f}s apart (≤{timestamp_exact_match}s) - AUTOMATIC CLUSTER (1.0)")
+                                best_score = 1.0
+                                best_match = cluster_id
+                                comparison_count += 1
+                                break  # Immediate match - no need to check others
+
+                            elif time_diff <= timestamp_high_priority:
+                                # Photos within high priority window - VERY HIGH priority match
+                                if debug:
+                                    print(f"\n>>> Comparison #{comparison_count + 1}: {cluster_id}")
+                                    print(f"    ⏱️  TIMESTAMP NEAR-MATCH: {time_diff:.1f}s apart (≤{timestamp_high_priority}s) - HIGH PRIORITY (0.85)")
+                                score = 0.85
+                                comparison_count += 1
+
+                                # Still higher than visual, but check if visual similarity is even better
+                                visual_score = compare_outfits(cluster_data['description'], outfit_desc, debug=debug)
+                                score = max(score, visual_score)  # Take the higher of timestamp or visual
+
+                                if score > best_score:
+                                    best_score = score
+                                    best_match = cluster_id
+
+                                # If we have strong time+visual match, stop searching
+                                if score >= 0.95:
+                                    break
+
+                                continue  # Move to next cluster
+
+                        # No timestamp match - use VISUAL SIMILARITY ONLY
                         if debug:
                             print(f"\n>>> Comparison #{comparison_count + 1}: Comparing against {cluster_id}")
                         score = compare_outfits(cluster_data['description'], outfit_desc, debug=debug)
@@ -398,6 +510,7 @@ def auto_cluster_photos(image_paths: List[str], confidence_threshold: float = 0.
                         'description': outfit_desc,
                         'colors': outfit_colors,
                         'bib_number': bib_number,
+                        'timestamp': photo_timestamp,  # Store first photo's timestamp
                         'paths': [image_path]
                     }
                     next_id += 1

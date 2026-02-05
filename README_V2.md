@@ -1,17 +1,31 @@
-# Photo Organizer V2 - Simplified Architecture
+# Photo Organizer V2 - Racing Photo Clustering
 
-A streamlined photo organization tool using Claude via Vertex AI for facial recognition. Automatically organizes your photo library by detecting and identifying people in photos.
+A streamlined photo organization tool using Claude via Vertex AI for **outfit-based recognition**. Automatically organizes racing/skiing photos by identifying the same person across multiple shots based on their outfit, equipment, and timing.
 
 ## Features
 
-- **Two Organization Modes:**
-  - **Database Mode**: Organize photos by matching faces against pre-registered people
-  - **Auto-Cluster Mode**: Automatically group similar faces without a database (NEW!)
+- **Multi-Priority Clustering Algorithm:**
+  - **Shot Date (HIGHEST PRIORITY)**: Photos taken within 10s automatically clustered
+  - **Visual Similarity**: Helmet colors/patterns, ski boots, clothing, equipment brands
+  - **Bib Numbers**: Detected for cluster naming only (not used for matching)
 
-- **Facial Recognition**: Uses Claude's vision capabilities via Google Cloud Vertex AI
+- **Two Organization Modes:**
+  - **Database Mode**: Organize photos by matching outfits against pre-registered types
+  - **Auto-Cluster Mode**: Automatically group similar outfits without a database (RECOMMENDED!)
+
+- **Visual Recognition**: Uses Claude's vision capabilities via Google Cloud Vertex AI
+- **EXIF Timestamp Analysis**: Leverages shot date for intelligent burst photo clustering
+  - Supports standard EXIF DateTimeOriginal
+  - macOS fallback for DxO-processed files (reads kMDItemContentCreationDate)
 - **Multiple File Formats**: Supports JPG, PNG, GIF, WebP, HEIC
 - **Safe Operations**: Copy or move modes with undo functionality
 - **Detailed Reports**: JSON logs of all organization operations
+- **API Call Optimization**: Caching system to minimize costs
+
+## Documentation
+
+- **[CLUSTERING.md](CLUSTERING.md)**: Comprehensive guide to the clustering algorithm, priority hierarchy, and configuration
+- **This README**: Installation, usage, and quick start guide
 
 ## Quick Start
 
@@ -152,21 +166,36 @@ organized_photos/
 **Auto-Cluster Mode:**
 ```
 organized_photos/
-├── Person_1/              # First discovered person
-│   ├── IMG_001.jpg
-│   └── IMG_002.jpg
-├── Person_2/              # Second discovered person
+├── Racer_Bib_23/          # Racer with clearly visible bib #23
+│   ├── IMG_001.jpg        # (shot at 14:23:45)
+│   ├── IMG_002.jpg        # (shot at 14:23:46 - timestamp match)
+│   └── IMG_011.jpg        # (shot at 14:25:30 - bib match or visual match)
+├── Racer_Bib_45/          # Racer with clearly visible bib #45
 │   └── IMG_003.jpg
-├── Person_3/              # Third discovered person
-│   └── IMG_004.jpg
-├── Multiple_People/       # Photos with multiple faces
+├── Outfit_1_white_blue/   # No clear bib - named by helmet/outfit colors
+│   ├── IMG_004.jpg
 │   └── IMG_005.jpg
-├── No_Faces_Detected/     # Landscapes, objects, etc.
+├── Outfit_2_red_black/    # Another unidentified racer
 │   └── IMG_006.jpg
+├── Multiple_People/       # Photos with multiple racers
+│   └── IMG_007.jpg
+├── No_People_Detected/    # Scenery, gates, etc.
+│   └── IMG_008.jpg
 └── organization_log.json  # Detailed report
 ```
 
-In auto-cluster mode, you can rename `Person_1`, `Person_2`, etc. folders after reviewing the photos.
+**Cluster Naming:**
+- `Racer_Bib_XX`: When bib number is clearly visible and readable
+- `Outfit_N_color1_color2`: When no bib visible (N = cluster number, colors from helmet/outfit)
+
+**How Clustering Works:**
+1. **Photos within 10 seconds** → Automatically grouped (burst photography)
+2. **Photos within 30 seconds** → High priority grouping (0.85 minimum similarity)
+3. **Visual outfit similarity** → Matched by helmet, boots, and clothing appearance
+
+**Note:** Bib numbers are used only for naming clusters, NOT for determining which photos match. This prevents errors from incorrect bib detection.
+
+See **[CLUSTERING.md](CLUSTERING.md)** for detailed algorithm documentation.
 
 ## Architecture
 
@@ -208,8 +237,31 @@ VERTEX_PROJECT_ID=your-gcp-project-id
 # Optional (with defaults)
 VERTEX_REGION=us-central1
 CLAUDE_MODEL=claude-3-5-sonnet@20240620
-CONFIDENCE_THRESHOLD=0.7
+
+# Visual similarity threshold (default: 0.5)
+# Lower = more photos per cluster, Higher = stricter grouping
+CONFIDENCE_THRESHOLD=0.5
+
+# Timestamp clustering windows (configurable!)
+TIMESTAMP_EXACT_MATCH_SECONDS=10
+# Photos within this window → Automatic 1.0 match (burst shots)
+# Adjust for your shooting style: 5-10 (tight), 10-15 (balanced), 15-30 (loose)
+
+TIMESTAMP_HIGH_PRIORITY_SECONDS=30
+# Photos within this window → 0.85 minimum similarity
+# Adjust based on sequence: 20-30 (tight), 30-60 (balanced), 60-120 (loose)
 ```
+
+**Clustering Behavior:**
+- Photos taken **≤EXACT_MATCH seconds apart**: Automatic clustering (1.0 match)
+- Photos taken **≤HIGH_PRIORITY seconds apart**: Minimum 0.85 similarity
+- Photos **>HIGH_PRIORITY seconds apart**: Uses visual matching with CONFIDENCE_THRESHOLD
+
+See **[CLUSTERING.md](CLUSTERING.md)** for:
+- Detailed clustering algorithm explanation
+- Configuration recommendations for different shooting styles
+- Troubleshooting clustering issues
+- Performance optimization tips
 
 ## Testing
 
@@ -287,6 +339,10 @@ pytest>=7.0.0
 
 | Aspect | V1 | V2 |
 |--------|----|----|
+| **Recognition Type** | Facial recognition | **Outfit/equipment recognition** |
+| **Primary Use Case** | Family photos | **Racing/skiing photos** |
+| **Clustering Priority** | Visual only | **Shot date → Bib → Visual** |
+| **EXIF Integration** | Not used | **Shot timestamp (highest priority)** |
 | Lines of code | ~2,400 | ~1,730 (-28%) |
 | AI providers | Claude + Gemini | Claude only |
 | Auth methods | API keys + Vertex | Vertex only |
@@ -296,6 +352,7 @@ pytest>=7.0.0
 | Abstraction layers | vision_client wrapper | Direct imports |
 | Code duplication | High | Low |
 | Maintenance burden | High | Low |
+| **API Optimization** | No caching | **Outfit detection cache** |
 
 ## License
 

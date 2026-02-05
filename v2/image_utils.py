@@ -7,7 +7,11 @@ Handles image loading, format conversion, resizing, and compression.
 import base64
 from io import BytesIO
 from pathlib import Path
+from datetime import datetime
+import subprocess
+import re
 from PIL import Image
+from PIL.ExifTags import TAGS
 import pillow_heif
 
 
@@ -169,3 +173,78 @@ def is_supported_image(file_path):
         bool: True if file extension is supported
     """
     return Path(file_path).suffix.lower() in SUPPORTED_FORMATS
+
+
+def get_image_timestamp(file_path):
+    """
+    Extract shot date from image EXIF data with macOS metadata fallback.
+
+    Priority order:
+    1. EXIF DateTimeOriginal (standard, cross-platform)
+    2. macOS kMDItemContentCreationDate (fallback for DxO-processed files)
+
+    Does NOT use DateTime or file modification time.
+
+    Args:
+        file_path: Path to image file
+
+    Returns:
+        datetime: Shot date/time, or None if not available
+    """
+    # Try EXIF DateTimeOriginal first (standard method)
+    try:
+        image = Image.open(file_path)
+        exif = image.getexif()
+
+        if exif:
+            # Build tag name lookup
+            exif_dict = {}
+            for tag_id, value in exif.items():
+                tag_name = TAGS.get(tag_id, tag_id)
+                exif_dict[tag_name] = value
+
+            # Only use DateTimeOriginal (shot date) - do NOT fall back to DateTime
+            datetime_str = exif_dict.get('DateTimeOriginal')
+
+            if datetime_str:
+                # EXIF datetime format: "YYYY:MM:DD HH:MM:SS"
+                return datetime.strptime(str(datetime_str), "%Y:%m:%d %H:%M:%S")
+
+    except Exception:
+        pass
+
+    # EXIF DateTimeOriginal not found - try macOS metadata fallback
+    try:
+        # Use mdls command to get macOS extended attributes (macOS only)
+        result = subprocess.run(
+            ['mdls', '-name', 'kMDItemContentCreationDate', str(file_path)],
+            capture_output=True,
+            text=True,
+            timeout=2
+        )
+
+        if result.returncode == 0 and result.stdout:
+            # Parse output: "kMDItemContentCreationDate = 2026-02-01 19:00:31 +0000"
+            match = re.search(r'kMDItemContentCreationDate\s*=\s*(.+)', result.stdout)
+            if match:
+                date_str = match.group(1).strip()
+
+                # Handle "(null)" case
+                if date_str == '(null)':
+                    return None
+
+                # Parse datetime: "2026-02-01 19:00:31 +0000"
+                # Try with timezone first
+                try:
+                    # Remove timezone for parsing (we'll keep it as-is)
+                    dt_str = date_str.rsplit(' ', 1)[0]  # Remove "+0000"
+                    return datetime.strptime(dt_str, "%Y-%m-%d %H:%M:%S")
+                except:
+                    pass
+
+    except (subprocess.TimeoutExpired, FileNotFoundError, Exception):
+        # mdls not available (not macOS) or other error
+        pass
+
+    # No shot date found in EXIF or macOS metadata
+    return None

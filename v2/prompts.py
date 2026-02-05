@@ -27,10 +27,14 @@ Focus on VISUAL DETAILS (in order of importance):
    - Suit/clothing brand logos
    - Pole brands if visible
 
-2. HELMET/HEADGEAR (HIGHEST PRIORITY):
+2. HELMET/HEADGEAR (HIGHEST PRIORITY - MOST DETAILED):
+   - Helmet BRAND (CRITICAL): SMITH, Giro, POC, Uvex, Salomon, etc.
    - Helmet colors (be specific: metallic blue, matte black, fluorescent yellow, etc.)
    - Helmet patterns: stripes, graphics, logos, racing designs, solid color, multi-color blocks
    - Helmet design elements: color combinations, accent colors, decals, numbers
+   - GOGGLE LENS COLOR: clear, tinted, mirrored, orange tint, blue tint, etc.
+   - GOGGLE STRAP COLOR and pattern: solid color, stripes, brand logos
+   - GOGGLE BRAND if visible
    - Visor color (clear, tinted, mirrored, colored)
 
 3. CLOTHING PATTERNS:
@@ -60,11 +64,16 @@ If multiple people are present, describe the most prominent person's gear.
 
 Provide a detailed paragraph emphasizing:
 1. BIB NUMBER (ONLY if ALL digits are CLEARLY readable with 100% certainty - if ANY doubt, omit it!)
-2. Helmet colors, patterns, and design (BE VERY SPECIFIC - most visible identifier)
+2. HELMET details (BE EXTREMELY SPECIFIC - most visible identifier):
+   - Helmet BRAND
+   - Helmet colors and patterns
+   - GOGGLE LENS COLOR (clear, tinted, mirrored, orange, blue, etc.)
+   - GOGGLE STRAP COLOR and pattern
+   - Any other helmet design elements
 3. SKI BOOT brand, colors, and design (VERY VISIBLE - often distinctive)
 4. Clothing patterns and graphics (stripes, designs, etc.)
 5. Primary and accent colors on all gear
-6. EQUIPMENT BRANDS - helmet, skis, boots (read visible brand names as supporting info)
+6. OTHER EQUIPMENT BRANDS - skis, poles (read visible brand names as supporting info)
 """
 
 
@@ -96,10 +105,14 @@ For each person you detect, provide:
    - Pole brands
    - Any sponsor logos or team names
 
-   HELMET/HEADGEAR (HIGHEST PRIORITY):
+   HELMET/HEADGEAR (HIGHEST PRIORITY - MOST CRITICAL FOR MATCHING):
+   - Helmet BRAND: SMITH, Giro, POC, Uvex, Salomon, etc. (very distinctive)
    - Helmet base color(s): be specific (metallic blue, matte black, fluorescent yellow, white, red, etc.)
    - Helmet patterns/graphics: stripes, racing designs, logos, sponsor graphics, color blocks, solid
    - Helmet accent colors and design elements
+   - GOGGLE COLORS: lens color (clear, tinted, mirrored, orange, blue, etc.)
+   - GOGGLE STRAP COLORS and patterns: solid, striped, branded, etc.
+   - GOGGLE BRAND if visible
    - Visor characteristics: clear, tinted, mirrored, colored
    - Numbers, text, or distinctive markings on helmet
 
@@ -135,13 +148,16 @@ Format your response as a JSON array with this structure:
 [
   {{
     "position": "description of location in image",
-    "outfit_description": "detailed description with bib number (only if clearly visible), helmet, boots, brands, patterns, and colors...",
+    "outfit_description": "detailed description with bib number (only if clearly visible), helmet brand, goggle details, boots, brands, patterns, and colors...",
     "bib_number": "123" or null if not clearly readable with 100% confidence,
     "equipment_brands": ["BRAND1", "BRAND2", "..."],
-    "boot_brand": "BRAND" or null if not visible,
-    "boot_colors": ["color1", "color2", "..."],
+    "helmet_brand": "BRAND" or null if not visible,
     "helmet_colors": ["color1", "color2", "..."],
     "helmet_patterns": ["pattern description"],
+    "goggle_lens_color": "clear/tinted/mirrored/orange/blue/etc" or null,
+    "goggle_strap_color": "color or pattern" or null,
+    "boot_brand": "BRAND" or null if not visible,
+    "boot_colors": ["color1", "color2", "..."],
     "patterns": ["clothing pattern1", "pattern2", "..."],
     "primary_colors": ["color1", "color2", "..."],
     "clothing_items": ["item1", "item2", "..."]
@@ -167,20 +183,21 @@ Description 2:
 
 ANALYSIS PRIORITIES (in order of importance):
 
-0. BIB NUMBER MATCH (ABSOLUTE 100% CERTAINTY - ONLY IF BOTH ARE CLEARLY VISIBLE):
-   - ONLY use bib numbers if BOTH descriptions have clearly readable bib numbers
-   - IF both have clear bib numbers AND they match → IMMEDIATE 1.0 score (100% same person)
-   - IF both have clear bib numbers AND they're different → IMMEDIATE 0.0 score (100% different people)
-   - IF only one has a bib number OR either is unclear → SKIP bib matching, use visual matching instead
-   - Bib numbers are UNIQUE identifiers - they override EVERYTHING else, but ONLY when clearly visible
-   - Better to use visual matching than risk wrong bib numbers
+NOTE: Do NOT use bib numbers for matching. Even if both descriptions have bib numbers, IGNORE them.
+Only use visual similarity based on outfit appearance.
 
-1. HELMET COLOR & PATTERN SIMILARITY (HIGHEST PRIORITY if no bib match - 30%):
-   - Are the helmet colors the same or very similar?
-   - Do the helmets have the same or similar patterns/graphics?
-   - Are helmet design elements similar (stripes, logos, color blocks)?
-   - Helmet appearance is THE MOST VISIBLE identifier
-   - Different helmet colors/patterns = significant score reduction
+1. HELMET SIMILARITY (HIGHEST PRIORITY - 30%):
+   PAY PARTICULAR ATTENTION TO:
+   - Helmet BRAND (SMITH, Giro, POC, etc.) - same brand is very strong indicator
+   - Helmet base colors - must match closely (metallic blue, matte black, etc.)
+   - Helmet patterns/graphics - stripes, logos, designs must be similar
+   - GOGGLE LENS COLOR - clear vs tinted vs mirrored vs colored (orange, blue, etc.)
+   - GOGGLE STRAP COLOR and pattern - very distinctive visual element
+   - Goggle brand if visible
+
+   Helmet appearance is THE MOST VISIBLE identifier.
+   Different helmet brand, colors, or goggle colors = significant score reduction.
+   Same helmet brand + same goggle colors + same helmet colors = very strong match.
 
 2. SKI BOOT SIMILARITY (VERY HIGH PRIORITY - 25%):
    - Are the boot colors the same or very similar?
@@ -216,43 +233,35 @@ SCORING GUIDELINES (be generous with matching):
 - 0.3-0.5: Somewhat similar (some color overlap in helmet or suit)
 - 0.0-0.3: Very different (completely different color schemes throughout)
 
-MATCHING RULES (CRITICAL - CHECK BIB NUMBERS FIRST, BUT ONLY IF BOTH ARE CLEARLY VISIBLE):
-- BOTH have clearly visible bib numbers AND same number = AUTOMATIC 1.0 (100% match - SAME PERSON)
-- BOTH have clearly visible bib numbers AND different numbers = AUTOMATIC 0.0 (different people)
-- ONLY ONE has a bib number OR either is unclear/partial = IGNORE bib numbers, use visual matching
-- If NO bib numbers visible in either description, proceed with visual matching:
-  - Same helmet colors + same boot colors + same suit patterns = score at least 0.9 (EXTREMELY STRONG visual match)
-  - Same helmet colors + same boot colors = score at least 0.8 (VERY STRONG visual match)
-  - Same helmet colors + similar boot colors + similar patterns = score at least 0.75
-  - Same helmet colors OR same boot colors + similar suit patterns = score at least 0.7
-  - Similar helmet colors + similar boot colors = score at least 0.65
-  - Same helmet colors but different boot colors = score at least 0.6
-  - Similar helmet colors + similar suit colors = score at least 0.55
-  - Same color family + similar patterns = score at least 0.5
-  - Same brands but different colors/patterns = score at least 0.4 (brands are bonus)
-- Be LENIENT - err on the side of higher scores to enable clustering
-- WEIGHT VISUAL APPEARANCE MORE THAN BRANDS
-- Example: Bib #23 vs Bib #23 = 1.0 (guaranteed same person)
-- Example: Bib #23 vs Bib #45 = 0.0 (guaranteed different people)
-- Example: White helmet + white boots + blue striped suit vs White helmet + white boots + blue striped suit = 0.95 (near perfect visual match)
-- Example: White helmet + white boots vs White helmet + white boots = 0.85 (very strong match)
-- Example: White helmet + white boots vs White helmet + red boots = 0.7 (helmet matches, boots differ)
-- Example: White helmet + blue suit vs White helmet + red suit = 0.65 (same helmet, different suit)
-- Example: Blue helmet + blue boots vs Navy helmet + navy boots = 0.65 (similar shades)
-- Example: SMITH helmet + different colors/boots = 0.4 (brand match but visual differs)
+MATCHING RULES (VISUAL APPEARANCE ONLY):
+- Same helmet colors + same boot colors + same suit patterns = score at least 0.9 (EXTREMELY STRONG visual match)
+- Same helmet colors + same boot colors = score at least 0.8 (VERY STRONG visual match)
+- Same helmet colors + similar boot colors + similar patterns = score at least 0.75
+- Same helmet colors OR same boot colors + similar suit patterns = score at least 0.7
+- Similar helmet colors + similar boot colors = score at least 0.65
+- Same helmet colors but different boot colors = score at least 0.6
+- Similar helmet colors + similar suit colors = score at least 0.55
+- Same color family + similar patterns = score at least 0.5
+- Same brands but different colors/patterns = score at least 0.4 (brands are bonus)
+
+Be LENIENT - err on the side of higher scores to enable clustering.
+WEIGHT VISUAL APPEARANCE MORE THAN BRANDS.
+
+EXAMPLES:
+- White helmet + white boots + blue striped suit vs White helmet + white boots + blue striped suit = 0.95 (near perfect visual match)
+- White helmet + white boots vs White helmet + white boots = 0.85 (very strong match)
+- White helmet + white boots vs White helmet + red boots = 0.7 (helmet matches, boots differ)
+- White helmet + blue suit vs White helmet + red suit = 0.65 (same helmet, different suit)
+- Blue helmet + blue boots vs Navy helmet + navy boots = 0.65 (similar shades)
+- SMITH helmet + different colors/boots = 0.4 (brand match but visual differs)
 
 Provide a similarity score between 0.0 (completely different) and 1.0 (nearly identical).
 
 Return your analysis as JSON with this exact structure:
 {{
   "similarity": 0.0,
-  "reasoning": "brief explanation - if BOTH have clearly visible bib numbers mention that FIRST, otherwise focus on helmet colors/patterns, then boot colors/brand, then suit patterns/colors, then other brands as supporting evidence"
+  "reasoning": "brief explanation focusing on helmet colors/patterns, then boot colors/brand, then suit patterns/colors, then other brands as supporting evidence"
 }}
-
-CRITICAL BIB NUMBER LOGIC:
-- If BOTH have bib numbers AND same → {{"similarity": 1.0, "reasoning": "Both have clearly visible bib #XX - definite match"}}
-- If BOTH have bib numbers AND different → {{"similarity": 0.0, "reasoning": "Different bibs (#XX vs #YY) - different people"}}
-- If ONLY ONE has bib OR you have ANY doubt about readability → IGNORE bib numbers completely, use visual matching (helmets, boots, suits)
 
 Important: Return ONLY the JSON, no additional text or markdown formatting.
 """
