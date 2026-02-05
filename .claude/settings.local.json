@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(chmod:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(source venv/bin/activate:*)",
+      "Bash(pip install:*)",
+      "Bash(ls:*)",
+      "Bash(gcloud ai models list:*)"
+    ]
+  }
+}

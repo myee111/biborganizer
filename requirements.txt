@@ -1,0 +1,7 @@
+anthropic>=0.18.0
+google-cloud-aiplatform>=1.38.0
+pillow>=10.0.0
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+pillow-heif>=0.10.0
+pytest>=7.0.0

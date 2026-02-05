@@ -1,0 +1,24 @@
+{
+  "confidence_threshold": 0.7,
+  "supported_formats": [".jpg", ".jpeg", ".png", ".gif", ".webp", ".heic"],
+  "max_image_size_mb": 5.0,
+  "max_image_dimension": 8000,
+  "model": "sonnet-3.5",
+  "anthropic_models": {
+    "sonnet-4.5": "claude-sonnet-4-5-20250929 (recommended - best quality)",
+    "opus-4.5": "claude-opus-4-5-20241101 (highest quality, slower/expensive)",
+    "sonnet-3.7": "claude-3-7-sonnet-20250219 (good quality)",
+    "sonnet-3.5": "claude-3-5-sonnet-20241022 (excellent quality)",
+    "haiku-3.5": "claude-3-5-haiku-20241022 (fastest, cheapest)",
+    "opus-3.5": "claude-3-5-opus-20241022 (high quality)",
+    "opus-3": "claude-3-opus-20240229 (high quality)"
+  },
+  "vertex_models": {
+    "sonnet-3.5": "claude-3-5-sonnet@20241022 (recommended - best available)",
+    "haiku-3.5": "claude-3-5-haiku@20241022 (fastest, cheapest)",
+    "opus-3": "claude-3-opus@20240229 (highest quality)"
+  },
+  "batch_size": 50,
+  "retry_attempts": 3,
+  "retry_delay_seconds": 2
+}
