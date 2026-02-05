@@ -10,11 +10,13 @@ Analyze this image and provide a detailed description of the clothing and gear w
 
 Focus on VISUAL DETAILS (in order of importance):
 
-1. BIB NUMBER (ABSOLUTE CRITICAL - UNIQUE IDENTIFIER):
+1. BIB NUMBER (ABSOLUTE CRITICAL - UNIQUE IDENTIFIER - ONLY IF CLEARLY READABLE):
    - Racing bib number (large number on chest/back)
-   - Read the exact number carefully
-   - This is THE MOST IMPORTANT identifier
-   - If visible, note it clearly
+   - ONLY record if the number is COMPLETELY CLEAR and UNAMBIGUOUS
+   - Must be able to read ALL digits with certainty
+   - If blurry, partially obscured, at bad angle, or ANY doubt: set to null
+   - Better to skip unclear bib numbers than misidentify them
+   - This is THE MOST IMPORTANT identifier WHEN clearly visible
 
 2. EQUIPMENT BRANDING (CRITICAL - PRIMARY IDENTIFIER):
    - Helmet brand: SMITH, Giro, POC, Uvex, Salomon, etc.
@@ -57,7 +59,7 @@ Focus on VISUAL DETAILS (in order of importance):
 If multiple people are present, describe the most prominent person's gear.
 
 Provide a detailed paragraph emphasizing:
-1. BIB NUMBER (if visible - read it carefully, this is critical!)
+1. BIB NUMBER (ONLY if ALL digits are CLEARLY readable with 100% certainty - if ANY doubt, omit it!)
 2. Helmet colors, patterns, and design (BE VERY SPECIFIC - most visible identifier)
 3. SKI BOOT brand, colors, and design (VERY VISIBLE - often distinctive)
 4. Clothing patterns and graphics (stripes, designs, etc.)
@@ -73,11 +75,17 @@ For each person you detect, provide:
 1. Position/location in the image (e.g., "center", "left side", "background right", etc.)
 2. Detailed GEAR description emphasizing:
 
-   BIB NUMBER (ABSOLUTE HIGHEST PRIORITY - UNIQUE IDENTIFIER):
+   BIB NUMBER (ABSOLUTE HIGHEST PRIORITY - UNIQUE IDENTIFIER - ONLY IF CRYSTAL CLEAR):
    - Racing bib number (large number on chest or back)
-   - READ THE EXACT NUMBER CAREFULLY
-   - This is THE MOST CRITICAL piece of information
-   - If not visible, note "no bib visible" or "bib number not readable"
+   - ONLY record if you can read ALL digits with 100% confidence
+   - Requirements for recording:
+     * All digits must be clearly visible
+     * Number must be in sharp focus
+     * Not partially obscured by arms, poles, or other objects
+     * Not at an extreme angle that makes digits ambiguous
+   - If ANY doubt about ANY digit: DO NOT record it, set to null
+   - Better to have no bib number than a wrong one
+   - This is THE MOST CRITICAL piece of information WHEN clearly readable
 
    EQUIPMENT BRANDS (CRITICAL - READ ALL VISIBLE BRAND NAMES):
    - Helmet brand: SMITH, Giro, POC, Uvex, Salomon, etc.
@@ -116,14 +124,19 @@ For each person you detect, provide:
    - Racing suit, jersey, jacket, gloves, protective gear
    - Material type: leather, textile, mesh
 
-Focus on BIB NUMBER FIRST (critical!), then helmet colors/patterns, then BOOT brand/colors (very visible!), then equipment brands, then clothing. DO NOT describe faces or facial features.
+Focus on BIB NUMBER FIRST (ONLY if 100% clearly readable!), then helmet colors/patterns, then BOOT brand/colors (very visible!), then equipment brands, then clothing. DO NOT describe faces or facial features.
+
+CRITICAL: For bib_number field:
+- ONLY include if you can read every digit with absolute certainty
+- If blurry, partially hidden, at bad angle, or ANY uncertainty: use null
+- Wrong bib number is worse than no bib number
 
 Format your response as a JSON array with this structure:
 [
   {{
     "position": "description of location in image",
-    "outfit_description": "detailed description with bib number, helmet, boots, brands, patterns, and colors...",
-    "bib_number": "123" or null if not visible,
+    "outfit_description": "detailed description with bib number (only if clearly visible), helmet, boots, brands, patterns, and colors...",
+    "bib_number": "123" or null if not clearly readable with 100% confidence,
     "equipment_brands": ["BRAND1", "BRAND2", "..."],
     "boot_brand": "BRAND" or null if not visible,
     "boot_colors": ["color1", "color2", "..."],
@@ -154,11 +167,13 @@ Description 2:
 
 ANALYSIS PRIORITIES (in order of importance):
 
-0. BIB NUMBER MATCH (ABSOLUTE 100% CERTAINTY):
-   - IF both descriptions have bib numbers AND they match → IMMEDIATE 1.0 score (100% same person)
-   - IF bib numbers are different → IMMEDIATE 0.0 score (100% different people)
-   - Bib numbers are UNIQUE identifiers - they override EVERYTHING else
-   - Check for bib numbers FIRST before analyzing anything else
+0. BIB NUMBER MATCH (ABSOLUTE 100% CERTAINTY - ONLY IF BOTH ARE CLEARLY VISIBLE):
+   - ONLY use bib numbers if BOTH descriptions have clearly readable bib numbers
+   - IF both have clear bib numbers AND they match → IMMEDIATE 1.0 score (100% same person)
+   - IF both have clear bib numbers AND they're different → IMMEDIATE 0.0 score (100% different people)
+   - IF only one has a bib number OR either is unclear → SKIP bib matching, use visual matching instead
+   - Bib numbers are UNIQUE identifiers - they override EVERYTHING else, but ONLY when clearly visible
+   - Better to use visual matching than risk wrong bib numbers
 
 1. HELMET COLOR & PATTERN SIMILARITY (HIGHEST PRIORITY if no bib match - 30%):
    - Are the helmet colors the same or very similar?
@@ -201,9 +216,10 @@ SCORING GUIDELINES (be generous with matching):
 - 0.3-0.5: Somewhat similar (some color overlap in helmet or suit)
 - 0.0-0.3: Very different (completely different color schemes throughout)
 
-MATCHING RULES (CRITICAL - CHECK BIB NUMBERS FIRST):
-- SAME bib number = AUTOMATIC 1.0 (100% match - SAME PERSON, no further analysis needed)
-- DIFFERENT bib numbers = AUTOMATIC 0.0 (different people, no further analysis needed)
+MATCHING RULES (CRITICAL - CHECK BIB NUMBERS FIRST, BUT ONLY IF BOTH ARE CLEARLY VISIBLE):
+- BOTH have clearly visible bib numbers AND same number = AUTOMATIC 1.0 (100% match - SAME PERSON)
+- BOTH have clearly visible bib numbers AND different numbers = AUTOMATIC 0.0 (different people)
+- ONLY ONE has a bib number OR either is unclear/partial = IGNORE bib numbers, use visual matching
 - If NO bib numbers visible in either description, proceed with visual matching:
   - Same helmet colors + same boot colors + same suit patterns = score at least 0.9 (EXTREMELY STRONG visual match)
   - Same helmet colors + same boot colors = score at least 0.8 (VERY STRONG visual match)
@@ -230,12 +246,13 @@ Provide a similarity score between 0.0 (completely different) and 1.0 (nearly id
 Return your analysis as JSON with this exact structure:
 {{
   "similarity": 0.0,
-  "reasoning": "brief explanation - if bib numbers checked mention that FIRST, then helmet colors/patterns, then boot colors/brand, then suit patterns/colors, then other brands as supporting evidence"
+  "reasoning": "brief explanation - if BOTH have clearly visible bib numbers mention that FIRST, otherwise focus on helmet colors/patterns, then boot colors/brand, then suit patterns/colors, then other brands as supporting evidence"
 }}
 
-CRITICAL: If BOTH descriptions contain bib numbers:
-- Same bib number → return {{"similarity": 1.0, "reasoning": "Same bib number #XX - definite match"}}
-- Different bib numbers → return {{"similarity": 0.0, "reasoning": "Different bib numbers (#XX vs #YY) - different people"}}
+CRITICAL BIB NUMBER LOGIC:
+- If BOTH have bib numbers AND same → {{"similarity": 1.0, "reasoning": "Both have clearly visible bib #XX - definite match"}}
+- If BOTH have bib numbers AND different → {{"similarity": 0.0, "reasoning": "Different bibs (#XX vs #YY) - different people"}}
+- If ONLY ONE has bib OR you have ANY doubt about readability → IGNORE bib numbers completely, use visual matching (helmets, boots, suits)
 
 Important: Return ONLY the JSON, no additional text or markdown formatting.
 """
